@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Easy Java desktop UI with JavaFX and Gloun scene builder"
+title:  "Easy Java desktop UI with JavaFX and gluon scene builder"
 date:   2020-12-13 00:00:00 -0600
 categories: java
 tags: java javafx gluon gui
@@ -73,20 +73,20 @@ That's pretty much it.
 
 But how about actually creating the `fxml` file, download and install [Gluon scene builder][gluon-scene-builder]. In this example we will start with a `Basic Application`:
 
-![basic application](/assets/images/easy-java-desktop-ui-with-javafx-and-gloun-scene-builder/javafxexample_basic_application.png)
+![basic application](/assets/images/easy-java-desktop-ui-with-javafx-and-gluon-scene-builder/javafxexample_basic_application.png)
 
 
 We will drag a `button` and a `label`. Select the `button` and we will change the text to `Press me!` on the `Properties` tab and in the `Code` tab we will set `On Action` to `buttonWasPressed`:
 
-![adding action to button](/assets/images/easy-java-desktop-ui-with-javafx-and-gloun-scene-builder/javafxexample_button_action.png)
+![adding action to button](/assets/images/easy-java-desktop-ui-with-javafx-and-gluon-scene-builder/javafxexample_button_action.png)
 
 For the `label` we will delete the text and set the `fx:id` to `myLabel`.
 
-![adding id to label](/assets/images/easy-java-desktop-ui-with-javafx-and-gloun-scene-builder/javafxexample_label_id.png)
+![adding id to label](/assets/images/easy-java-desktop-ui-with-javafx-and-gluon-scene-builder/javafxexample_label_id.png)
 
 Now we need to define the `controller`. On the left panel look for `Document` and then `Controller` and set the `Controller class` to what your controller will be named, on this example we will use `dev.jsedano.example.UIController` (this is the fully qualified class name).
 
-![defining the controller](/assets/images/easy-java-desktop-ui-with-javafx-and-gloun-scene-builder/javafxexample_setting_controller.png)
+![defining the controller](/assets/images/easy-java-desktop-ui-with-javafx-and-gluon-scene-builder/javafxexample_setting_controller.png)
 
 And then we can save the generated `fxml` directly into our project `resources` folder, in this example we save to `src/main/resources/exampleui.fxml`
 
@@ -114,7 +114,7 @@ We run the project using `mvn clean javafx:run`
 
 And if everything was correct we should be seeing this when we press the button:
 
-![button was pressed](/assets/images/easy-java-desktop-ui-with-javafx-and-gloun-scene-builder/javafxexample_button_was_pressed.png)
+![button was pressed](/assets/images/easy-java-desktop-ui-with-javafx-and-gluon-scene-builder/javafxexample_button_was_pressed.png)
 
 From then on you can create anything you need, for documentation on JavaFX visit [https://openjfx.io][open-javafx].
 Download the complete code from this example here [JavaFX example][javafx-example].
