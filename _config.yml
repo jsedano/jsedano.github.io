@@ -28,8 +28,7 @@ url: "" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: weirderror
 github_username:  jsedano
 linkedin_username: jsedano
-instagram: weirderror0
-devto: jsedano
+instagram_username: weirderror0
 author: juan sedano
 # Build settings
 theme: minima
