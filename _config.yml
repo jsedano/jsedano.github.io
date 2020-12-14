@@ -31,6 +31,7 @@ linkedin_username: jsedano
 instagram_username: weirderror0
 author: juan sedano
 # Build settings
+show_excerpts: true
 theme: minima
 plugins:
   - jekyll-feed
