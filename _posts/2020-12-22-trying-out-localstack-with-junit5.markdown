@@ -18,7 +18,7 @@ brew install docker-machine
 brew cask install virtualbox
 {% endhighlight %}
 
-That is all the stuff we need to install, then we need to create the  virtual machine with `virtual box` which will be running `docker`.
+That is all the stuff we need to install, then we need to create the  virtual machine with `virtualbox` which will be running `docker`.
 
 {% highlight shell %}
 docker-machine create --driver virtualbox default
