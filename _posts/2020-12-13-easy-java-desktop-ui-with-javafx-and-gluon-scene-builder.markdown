@@ -7,7 +7,7 @@ tags: java javafx gluon gui
 ---
 If you need some `GUI` for your desktop Java application you can use the `scene builder` from Gluon to drag and drop controls and you can then export them into a `.fxml` file that you can load using `JavaFX`.  In this example we are using Java 11 and maven.
 
-You can find the code for this example here [JavaFX example][javafx-example].
+You can find the code for this example here: [JavaFX example][javafx-example].
 
 You just need these dependencies in your project pom:
 
