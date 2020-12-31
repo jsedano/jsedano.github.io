@@ -30,8 +30,9 @@ For the `brute force` approach we need two things:
 
 In order to generate every possible permutation we will use a `recursive` function, where we keep appending a unique number to the array until we have a complete permutation and then we go back and use a different number to get a different permutation. This is the tree that we build in order to achieve this, in this example N = 3.
 
+{:refdef: style="text-align: center;"}
 ![generatePermutations](/assets/images/n-queens-brute-force/permutations.jpg)
-
+{: refdef}
 
 {% highlight java %}
 static void generatePermutations(List <int[]>permList, LinkedHashSet<Integer> perm, int n){
