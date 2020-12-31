@@ -28,7 +28,7 @@ For the `brute force` approach we need two things:
 - a list of every possible `permutation` of 0 to N - 1
 - a way to check if that permutation is a solution or not.
 
-In order to generate every possible permutation we will use a `recursive` function, where we keep appending a unique number to the array until we have a complete permutation and then we go back and use a different number to get a different permutation. This is the three that we build in order to achieve this, in this example N = 3.
+In order to generate every possible permutation we will use a `recursive` function, where we keep appending a unique number to the array until we have a complete permutation and then we go back and use a different number to get a different permutation. This is the tree that we build in order to achieve this, in this example N = 3.
 
 ![generatePermutations](/assets/images/n-queens-brute-force/permutations.jpg)
 
