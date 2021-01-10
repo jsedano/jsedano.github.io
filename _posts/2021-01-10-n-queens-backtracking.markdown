@@ -7,7 +7,7 @@ tags: java algorithms
 ---
 This is the `N-Queens` problem solution with a `backtraking` approach, look here for the [N-Queens brute force approach][N-Queens brute force].
 
-If you are not familiar with the `N-Queens` problem [look here for an examplation][N-Queens brute force].
+If you are not familiar with the `N-Queens` problem [look here for an explanation][N-Queens brute force].
 
 You can find the complete code for this post here: [NQueensBacktracking.java][NQueensBacktracking.java].
 
