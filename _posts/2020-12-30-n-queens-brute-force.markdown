@@ -99,10 +99,4 @@ java NQueensBruteForce 6
 
 Download the complete code from this post here [NQueensBruteForce.java][NQueensBruteForce.java].
 
-
-
-
-
 [NQueensBruteForce.java]: https://github.com/jsedano/examples/blob/main/java-snippets/NQueensBruteForce.java
-[docker-macos]: https://www.robinwieruch.de/docker-macos
-[localstack-java-utils]: https://github.com/localstack/localstack-java-utils
