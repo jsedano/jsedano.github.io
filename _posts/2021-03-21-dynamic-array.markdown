@@ -55,7 +55,7 @@ public void remove(int index) {
     if (index < 0 || index >= size) {
         throw new IndexOutOfBoundsException();
     }
-    for(int i = index + 1; i <= size; i++) {
+    for(int i = index + 1; i < size; i++) {
         innerArray[i - 1] = innerArray[i];
     }
     size--;
