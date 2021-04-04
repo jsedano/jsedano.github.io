@@ -34,7 +34,7 @@ public class SingleNode<T extends Comparable<? super T>>{
 {% endhighlight %}
 
 In this implementation of the linked list we will hold both a `reference` to the `head` and the `tail` of the list.
-We will be only accepting objets of classes that implement the `Comparable` interface since that way we can easily compare between two values.
+We will be only accepting objects of classes that implement the `Comparable` interface since that way we can easily compare between two values.
 
 {% highlight java %}
 public class LinkedList<T extends Comparable<? super T>> {
