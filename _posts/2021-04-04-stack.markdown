@@ -1,0 +1,65 @@
+---
+layout: post
+title:  "Stack"
+date:   2021-04-04 00:00:00 -0600
+categories: data-structures
+tags: data-structures
+---
+My notes on the `stack` abstract data type with an implementation using an array in Java.
+
+You can find the complete code for this and other data structures here: [data structures and algorithms][data structures and algorithms]
+
+A `stack` is an `abstract data type` that mimics a real world stack where you can place elements on the top or you can take the top element. The behavior of the stack is described as `last in first out` (LIFO).
+
+Common Operations for a stack includes:
+
+|Operation           |Complexity          |
+|--------------------|--------------------|
+|push(element)       |O(1)                |
+|pop()               |O(1)                |
+
+Push will place a new element on the top of the stack.
+
+{:refdef: style="text-align: center;"}
+![node](/assets/images/stack/push.jpeg)
+{: refdef}
+
+{% highlight java %}
+public boolean push(T valueToPush) {
+    if(size == innerArray.length) {
+        return false;
+    }
+    innerArray[size] = valueToPush;
+    size++;
+    return true;
+}
+{% endhighlight %}
+
+Pop takes out the top element from the stack and returns it.
+
+{:refdef: style="text-align: center;"}
+![node](/assets/images/stack/pop.jpeg)
+{: refdef}
+
+{% highlight java %}
+public T pop() {
+    if(size == 0) {
+        throw new NullPointerException("empty stack");
+    }
+    T valueToPop = innerArray[size - 1];
+    innerArray[size - 1] = null;
+    size--;
+    return valueToPop;
+}
+{% endhighlight %}
+
+In this implementation the `capacity` of the stack is the capacity of the `inner array`.
+We keep track of the size of the stack by increasing or decreasing the size with every pop and push, by doing this we always know that `top` is at `innerArray[size-1]` and when we do a push we put new element at `innerArray[size]`.
+
+Implementing a stack using a [linked list][linked list] would be even easier because we can keep adding a new node to the linked list with every push and for the pop we only need to get the last element, remove the last element and then return it.
+
+
+Download the complete code for this and other data structures here: [data structures and algorithms][data structures and algorithms].
+
+[data structures and algorithms]: https://github.com/jsedano/examples/tree/main/data-structures-and-algorithms
+[linked list]: {% post_url 2021-03-15-linked-list %}
