@@ -56,7 +56,7 @@ public T pop() {
 In this implementation the `capacity` of the stack is the capacity of the `inner array`.
 We keep track of the size of the stack by increasing or decreasing the size with every pop and push, by doing this we always know that `top` is at `innerArray[size-1]` and when we do a push we put new element at `innerArray[size]`.
 
-Implementing a stack using a [linked list][linked list] would be even easier because we can keep adding a new node to the linked list with every push and for the pop we only need to get the last element, remove the last element and then return it.
+Implementing a stack using a [linked list][linked list] would be even easier because we can keep prepending a new node to the linked list with every push and for the pop we only need to get the first element, remove it from the list and then return it.
 
 
 Download the complete code for this and other data structures here: [data structures and algorithms][data structures and algorithms].
