@@ -1,0 +1,73 @@
+---
+layout: post
+title:  "Queue"
+date:   2021-04-05 00:00:00 -0600
+categories: data-structures
+tags: data-structures
+---
+My notes on the `queue` abstract data type with an implementation using an array in Java.
+
+You can find the complete code for this and other data structures here: [data structures and algorithms][data structures and algorithms]
+
+A `queue` is an `abstract data type` that has a `First In First Out (FIFO)` behavior which means items will going to come out of the queue in the same order they were enqueued.
+
+Common Operations for a queue includes:
+
+|Operation           |Complexity          |
+|--------------------|--------------------|
+|enqueue(element)    |O(1)                |
+|dequeue()           |O(1)                |
+
+In this implementation we are using a normal array, and we need to keep track of a few things:
+
+- **size**: which will hold the current size of the queue
+- **dequeueIndex**: the index where the next element to be dequeued is located.
+- **enqueueIndex**: the index where a new element will be placed.
+
+`Enqueue` will add a new element to the queue
+
+{% highlight java %}
+public boolean enqueue(T valueToPush) {
+    if(size == innerArray.length) {
+        return false;
+    }
+    innerArray[enqueueIndex] = valueToPush;
+    if (enqueueIndex == innerArray.length - 1) {
+        enqueueIndex = 0;
+    } else {
+        enqueueIndex++;
+    }
+    size++;
+
+    return true;
+}
+{% endhighlight %}
+
+If size of the queue is equal to the `capacity` of the `inner array` then it means that queue is full and we don't enqueue more items.
+
+In the case the `enqueueIndex` is already at the end of the of the inner array we circle back to the beginning of the array.
+
+Dequeue takes out an element of the queue and returns it.
+
+{% highlight java %}
+public T dequeue() {
+    if(size == 0) {
+        throw new NullPointerException("empty queue");
+    }
+    T valueToDequeue = innerArray[dequeueIndex];
+    innerArray[dequeueIndex] = null;
+    if (dequeueIndex == innerArray.length - 1) {
+        dequeueIndex = 0;
+    } else {
+        dequeueIndex++;
+    }
+    size--;
+    return valueToDequeue;
+}
+{% endhighlight %}
+
+Similarly to the enqueue method, if the `dequeueIndex` is at the end of the array we circle back to the beginning.
+
+Download the complete code for this and other data structures here: [data structures and algorithms][data structures and algorithms].
+
+[data structures and algorithms]: https://github.com/jsedano/examples/tree/main/data-structures-and-algorithms
