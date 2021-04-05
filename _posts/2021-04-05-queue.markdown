@@ -24,7 +24,7 @@ In this implementation we are using a normal array, and we need to keep track of
 - **dequeueIndex**: the index where the next element to be dequeued is located.
 - **enqueueIndex**: the index where a new element will be placed.
 
-`Enqueue` will add a new element to the queue
+`Enqueue` will add a new element to the queue.
 
 {% highlight java %}
 public boolean enqueue(T valueToPush) {
