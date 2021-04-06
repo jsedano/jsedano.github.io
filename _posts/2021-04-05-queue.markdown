@@ -47,7 +47,7 @@ If size of the queue is equal to the `capacity` of the `inner array` then it mea
 
 In the case the `enqueueIndex` is already at the end of the of the inner array we circle back to the beginning of the array.
 
-Dequeue takes out an element of the queue and returns it.
+`Dequeue` takes out an element of the queue and returns it.
 
 {% highlight java %}
 public T dequeue() {
