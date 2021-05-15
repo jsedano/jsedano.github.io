@@ -1,11 +1,11 @@
 ---
 layout: post
-title:  "Cycle on Linked list"
+title:  "Cycle in Linked list"
 date:   2021-05-14 00:00:00 -0600
 categories: data-structures
 tags: data-structures
 ---
-I'll show three different ways in which we can detect if theres a loop on a Linked List.
+I'll show three different ways in which we can detect if theres a loop in a Linked List.
 
 First consider this the class we will be using for the linked list:
 
