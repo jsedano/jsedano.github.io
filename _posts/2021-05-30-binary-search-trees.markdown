@@ -58,7 +58,7 @@ A `tree` is an undirected graph that satisfies any of the following definitions:
 
 ### Binary Tree Node
 
-This is what the class that we will be using as node looks like (setters and getter omitted).
+This is what the class that we will be using as node looks like (setters and getters omitted).
 
 {% highlight java %}
 class BinaryNode<T extends Comparable<? super T>> {
@@ -204,7 +204,7 @@ private BinaryNode<T> getLeftmost(BinaryNode<T> node) {
 }
 {% endhighlight %}
 
-After that we copy the value to the node we are removing and then go inside the subtree in order to delete the node, since its the leftmost node we now that is going to fall in the case of a removal of a leaf node.
+After that we copy the value to the node we are removing and then go inside the subtree in order to delete the node, since its the leftmost node we know that is going to fall in the case of a removal of a leaf node.
 
 {% highlight java %}
 BinaryNode<T> tmp = getLeftmost(node.getRightChild());
