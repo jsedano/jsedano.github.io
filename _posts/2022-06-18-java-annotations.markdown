@@ -80,9 +80,10 @@ As you can see the meta-annotation **@Target** is used to say that this particul
 above a method declaration and the **@Retention** annotation is saying that this annotation will not be recorded in
 the class file and will not be available at runtime.
 
-In order to actually define functionality for an annotation type we need to implement an AbstractProcessor.
+In order to actually define functionality for an annotation type we need to implement an [AbstractProcessor][AbstractProcessor].
 
 
 
 [https://docs.oracle.com/javase/tutorial/java/annotations/]:[https://docs.oracle.com/javase/tutorial/java/annotations/]
 [lombok]:[https://projectlombok.org]
+[AbstractProcessor]: {% post_url 2022-06-26-a-custom-annotation-to-apply-currying-in-java %}
