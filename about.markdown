@@ -3,7 +3,7 @@ layout: page
 title: About
 permalink: /about/
 ---
-
+{%- include 062022.html -%}
 Hi,
 
 I'm Juan Sedano, I like coding.
