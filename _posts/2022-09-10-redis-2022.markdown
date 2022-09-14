@@ -1,0 +1,74 @@
+---
+layout: post
+title:  "Redis 2022"
+date:   2022-09-09 00:00:00 -0600
+categories: redis
+tags: redis
+published: false
+---
+
+What is Redis on 2022. What can we do with it. How to scale. Ways to run it on different clouds.
+
+## What is Redis?
+
+Redis is a key value store, just like a hash table. It can be used in-memory as cache and data will not be persisted or it can persist the data and be use as data storage. [Keys][redis keys] can have a length to up to 512 MB.
+
+It can also be used as a [message queue / message broker.][redis message queue and message broker]
+
+## Supported data types
+
+Redis supports several data types
+
+|Type                |Max Size            | Description              |
+|--------------------|--------------------|--------------------------|
+|[Strings][redis Strings]|512 MB              | Bytes, text, serialized objects, binary arrays             |
+|[Lists][redis Lists]|2^32 - 1 (4,294,967,295) elements.            | Linked list of Redis Strings           |
+|[Sets][redis Sets]| 2^32 - 1 (4,294,967,295) members.              | Unordered unique Redis Strings            |
+|[Sorted Sets][redis Sorted Sets]| Not specified | Every String has also an integer weight that you must set up |
+|[Hashes][redis Hashes]| 4,294,967,295 (2^32 - 1) field-value pairs              | Hash table |
+|[Streams][redis Streams]|  Not specified |Used to track real time events and allows consumers and consumer groups to read them|
+
+### Special use cases types
+
+- [Geospatial][redis Geospatial]
+
+Allows to store coordinates and perform operations such as finding the closest one.
+
+- [HyperLogLog][redis HyperLogLog]
+
+Not gonna even try to summarize this one, [read this instead.][Redis new data structure: the HyperLogLog]
+
+- [Bitmaps][redis Bitmaps]
+
+Treat a String like a bit vector, allows performing bitwise operations.
+
+- [Bitfields][redis Bitfields]
+
+Allows storing, atomic read, write and read operations for 1 bit unsigned integers to 63 signed bit integers.
+
+## Additional support
+
+### RedisJSON
+
+### RedisGraph
+
+### RedisTimeSeries
+
+### RedisBloom
+
+## Message queues with Redis Pub/Sub 
+
+
+[redis keys]:https://redis.io/docs/data-types/tutorial/#keys
+[redis message queue and message broker]:https://redis.com/solutions/use-cases/messaging/
+[redis Strings]:https://redis.io/docs/data-types/tutorial/#strings
+[redis Lists]:https://redis.io/docs/data-types/lists/
+[redis Sets]:https://redis.io/docs/data-types/sets/
+[redis Sorted Sets]:https://redis.io/docs/data-types/sorted-sets/
+[redis Hashes]:https://redis.io/docs/data-types/hashes/
+[redis Streams]:https://redis.io/docs/data-types/streams/
+[redis Geospatial]:https://redis.io/docs/data-types/geospatial/
+[redis HyperLogLog]:https://redis.io/docs/data-types/geospatial/
+[redis Bitmaps]:https://redis.io/docs/data-types/geospatial/
+[redis Bitfields]:https://redis.io/docs/data-types/geospatial/
+[Redis new data structure: the HyperLogLog]:http://antirez.com/news/75
