@@ -7,7 +7,7 @@ tags: redis
 published: false
 ---
 
-What is Redis on 2022. What can we do with it. How to scale. Ways to run it on different clouds.
+What is Redis (Remote Dictionary Server) on 2022. What can we do with it. How to scale. How to run it on the cloud.
 
 ## What is Redis?
 
@@ -40,7 +40,7 @@ Not gonna even try to summarize this one, [read this instead.][Redis new data st
 
 - [Bitmaps][redis Bitmaps]
 
-Treat a String like a bit vector, allows performing bitwise operations.
+Use a String like a bit vector, allows performing bitwise operations.
 
 - [Bitfields][redis Bitfields]
 
@@ -48,15 +48,58 @@ Allows storing, atomic read, write and read operations for 1 bit unsigned intege
 
 ## Additional support
 
-### RedisJSON
+### [RedisJSON][Redis JSON]
 
-### RedisGraph
+Adds facilities to store json documents and adds operations to be able to access / update fields using [JSONPath][JSONPath].
 
-### RedisTimeSeries
+### [RedisGraph][Redis Graph]
 
-### RedisBloom
+A graph database.
 
-## Message queues with Redis Pub/Sub 
+### [RedisTimeSeries][Redis TimeSeries]
+
+Module that adds a time series data structure to Redis, allowing querying by start / end time.
+
+### [RedisBloom][Redis Bloom]
+
+Probabilistic data structures.
+
+### [RedisInsight][Redis Insight]
+
+Visual support that helps optimizing your stuff on Redis.
+
+## [Message queues with Redis Pub/Sub][Redis PubSub]
+
+We can use Redis to create channels, send messages to the channels and have subscribers that recive the message.
+
+## Redis on the cloud
+
+### redis cloud
+
+We can use a hosted service using the offer from Redis on [Redis Cloud][Redis cloud].
+
+Or you can install it following [guides detailed here.][Redis install]
+
+### [aws][aws]
+
+AWS only supports Redis as an in memmory database, but you could install it on a service like ECS.
+
+### [gcp][gcp]
+
+Google cloud platform currently does not suppert persisting the data out of the box.
+
+### [azure][azure]
+
+Apparently you can persist using out of the box redis services on azure, but they dont recomend it.
+
+## Scalabity
+
+You can scale horizontally using [Redis Cluster][Redis Cluster] where you have a master that replicates the information between replicas, but it doesn't guarantees that you are not going to lose data, if you are unlucky that a replica is randomly selected as master and then it goes down before propagating the changes, it can lose data, unless you configure it so that the master has to acknowledge having replicated the information, but then you have to accept a hit on your performance.
+
+## [Security][Redis Security]
+
+Redis recomends that redis is only used on trusted environments where only trusted clients can access it.
+
 
 
 [redis keys]:https://redis.io/docs/data-types/tutorial/#keys
@@ -72,3 +115,18 @@ Allows storing, atomic read, write and read operations for 1 bit unsigned intege
 [redis Bitmaps]:https://redis.io/docs/data-types/geospatial/
 [redis Bitfields]:https://redis.io/docs/data-types/geospatial/
 [Redis new data structure: the HyperLogLog]:http://antirez.com/news/75
+[Redis JSON]:https://redis.io/docs/stack/json/
+[JSONPath]:https://goessner.net/articles/JsonPath/
+[Redis Graph]:https://redis.io/docs/stack/graph/
+[Redis TimeSeries]:https://redis.io/docs/stack/timeseries/
+[Redis Bloom]:https://redis.io/docs/stack/bloom/
+[Redis Insight]:https://redis.io/docs/stack/insight/
+[Redis PubSub]:https://redis.io/docs/manual/pubsub/
+[Redis cloud]:https://redis.com/try-free/
+[Redis aws]:https://aws.amazon.com/redis/
+[aws]:https://aws.amazon.com/redis/
+[Redis install]:https://developer.redis.com/create/from-source/
+[gcp]:https://cloud.google.com/memorystore/docs/redis/redis-overview
+[azure]:https://azure.microsoft.com/en-us/products/cache/
+[Redis Cluster]:https://redis.io/docs/manual/scaling/
+[Redis Security]:https://redis.io/docs/manual/security/
