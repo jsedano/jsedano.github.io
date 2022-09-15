@@ -82,7 +82,7 @@ Or you can install it following [guides detailed here.][Redis install]
 
 ### [aws][aws]
 
-AWS only supports Redis as an in memmory database, but you could install it on a service like ECS.
+AWS only supports Redis as an in memmory database, but you could try to install it on a service like EC2 and put a separate storage to persist.
 
 ### [gcp][gcp]
 
