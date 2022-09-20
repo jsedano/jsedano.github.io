@@ -4,6 +4,7 @@ title:  "Set if not null Java"
 date:   2021-02-22 00:00:00 -0600
 categories: java
 tags: java
+comments: true
 ---
 Simple ways to check if a value is null before setting it to some object in Java.
 

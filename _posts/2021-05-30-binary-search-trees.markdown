@@ -4,6 +4,7 @@ title:  "Binary search trees"
 date:   2021-05-30 00:00:00 -0600
 categories: data-structures
 tags: data-structures
+comments: true
 ---
 A `binary search tree` is a `binary tree` where the left subtree has smaller elements and the right subtree has larger elements.
 

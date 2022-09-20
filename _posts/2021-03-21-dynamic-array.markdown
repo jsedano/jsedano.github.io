@@ -4,6 +4,7 @@ title:  "Dynamic array"
 date:   2021-03-21 00:00:00 -0600
 categories: data-structures
 tags: data-structures
+comments: true
 ---
 My notes on `Dynamic array` with an implementation in Java.
 

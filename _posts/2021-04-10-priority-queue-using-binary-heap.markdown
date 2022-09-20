@@ -4,6 +4,7 @@ title:  "Priority queue using binary heap"
 date:   2021-04-10 00:00:00 -0600
 categories: data-structures
 tags: data-structures
+comments: true
 ---
 A `priority queue` is an abstract data type that saves items with a `priority` and when we fetch the next element (`poll`) we receive the element with the highest priority in the case of a `max priority queue` or the lowest priority if we are using a `min priority queue`.
 

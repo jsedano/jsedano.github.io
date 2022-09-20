@@ -4,6 +4,7 @@ title:  "Trying out localstack with JUnit5"
 date:   2020-12-22 00:00:00 -0600
 categories: java
 tags: java junit5 localstack
+comments: true
 ---
 I was trying to fake `Amazon Web Services` using `localstack` by running it with `Junit5` and this is what I did.
 

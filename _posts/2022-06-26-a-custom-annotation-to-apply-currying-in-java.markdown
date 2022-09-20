@@ -4,6 +4,7 @@ title:  "A custom annotation to apply currying in Java"
 date:   2022-06-26 00:00:00 -0600
 categories: java
 tags: java
+comments: true
 ---
 I created a custom annotation in order to apply currying to a method or constructor.
 

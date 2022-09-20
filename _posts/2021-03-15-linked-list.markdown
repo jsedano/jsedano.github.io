@@ -4,6 +4,7 @@ title:  "Linked list"
 date:   2021-03-15 00:00:00 -0600
 categories: data-structures
 tags: data-structures
+comments: true
 ---
 My notes on `Linked list` with an implementation in Java.
 

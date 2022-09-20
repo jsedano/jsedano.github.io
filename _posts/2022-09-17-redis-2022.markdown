@@ -4,6 +4,7 @@ title:  "Redis 2022"
 date:   2022-09-17 00:00:00 -0600
 categories: redis
 tags: redis
+comments: true
 ---
 
 What is Redis (Remote Dictionary Server) on 2022. What can we do with it. How to scale. How to run it on the cloud.

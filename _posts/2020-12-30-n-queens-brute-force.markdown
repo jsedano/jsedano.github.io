@@ -4,6 +4,7 @@ title:  "N-Queens brute force"
 date:   2020-12-30 00:00:00 -0600
 categories: algorithms
 tags: java algorithms
+comments: true
 ---
 The `N-Queens` problem consists in finding a position for N chess queens in a board of NxN squares where none of the queens are attacking each other.
 

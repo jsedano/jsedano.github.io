@@ -4,6 +4,7 @@ title:  "N-Queens backtraking"
 date:   2021-01-10 00:00:00 -0600
 categories: algorithms
 tags: java algorithms
+comments: true
 ---
 This is the `N-Queens` problem solution with a `backtraking` approach, look here for the [N-Queens brute force approach][N-Queens brute force].
 

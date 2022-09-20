@@ -4,6 +4,7 @@ title:  "Currying in Java"
 date:   2022-06-13 00:00:00 -0600
 categories: java
 tags: java
+comments: true
 ---
 Let's see some examples of how to achieve currying in Java.  
 

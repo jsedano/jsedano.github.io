@@ -4,6 +4,7 @@ title:  "Java Redis pub/sub example with Jedis"
 date:   2022-09-19 00:00:00 -0600
 categories: java, redis
 tags: java, redis, jedis
+comments: true
 ---
 
 This is a Redis pub/sub example written in Java using Jedis.

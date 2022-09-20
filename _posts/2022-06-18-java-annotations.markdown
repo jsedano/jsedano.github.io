@@ -4,6 +4,7 @@ title:  "Java @Annotations"
 date:   2022-06-18 00:00:00 -0600
 categories: java
 tags: java
+comments: true
 ---
 If you have been using Java for about a week (probably even less) chances are you have already seen some annotations.
 Let's review some stuff about them.

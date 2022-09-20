@@ -4,6 +4,7 @@ title:  "Remove duplicates in unordered array with Java using streams"
 date:   2022-05-28 00:00:00 -0600
 categories: java
 tags: java
+comments: true
 ---
 Heres how to remove duplicates from an unordered primitive int array on Java using streams.  
 

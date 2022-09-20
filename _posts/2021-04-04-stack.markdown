@@ -4,6 +4,7 @@ title:  "Stack"
 date:   2021-04-04 00:00:00 -0600
 categories: data-structures
 tags: data-structures
+comments: true
 ---
 My notes on the `stack` abstract data type with an implementation using an array in Java.
 
