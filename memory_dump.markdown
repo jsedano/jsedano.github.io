@@ -3,7 +3,6 @@ layout: page
 title: memory dump
 permalink: /memory_dump/
 ---
-
 This is a personal collection of things I dont't want to forget such as how I install and run things.
 
 - [Docker](#docker)
@@ -11,14 +10,11 @@ This is a personal collection of things I dont't want to forget such as how I in
         - [Intallation](#install_docker_on_2012_mbp)
         - [Run / Stop](#run_docker_on_2012_mbp)
     - [postgres](#postgres_image)
-        - [install](#postgres_image_install)
+    - [schemaspy](#schemaspy_image)
+    - [commands](#docker_commands)   
 - [Postgres](#postgres)
     - [psql (postgres cllient)](#psql)
-    - [psql commands](#psql_commands)
-        - [connect](#psql_command_connect)
-        - [connect to database](#psql_command_connect_to_database)
-        - [run sql script](#psql_command_run_script)
-
+        - [commands](#psql_commands)
 
 ## Docker <a name="docker"></a>
 
@@ -59,17 +55,31 @@ docker-machine stop default
 
 ### postgres <a name="postgres_image"></a>
 
-#### install <a name="postgres_image_install"></a>
-
 {% highlight shell %}
 docker run --name some-postgres -e POSTGRES_PASSWORD=mysecretpassword -d -p 5432:5432 postgres
 {% endhighlight shell %}
 
 From: [https://stackoverflow.com/a/37704532/1845671](https://stackoverflow.com/a/37704532/1845671)
 
+### schemaspy <a name="schemaspy_image"></a>
+
+This creates a diagram of your database
+
+{% highlight shell %}
+docker run -v `pwd`/diagram:/output schemaspy/schemaspy:snapshot -t pgsql --port 5432 -u postgres -db <the_database> -host <the host> -p mysecretpassword
+{% endhighlight shell %}
+
+### commands <a name="docker_commands"></a>
+
+|Description                | Command |
+|--------------------|----------------------------------------------|
+|List containers, even stoped | docker ps -a |
+|List images | docker images|
+|List container ips|docker inspect -f \'\{\{.Name\}\}-\{\{.NetworkSettings.IPAddress \}\}\' $(docker ps -aq)|
+
 ## postgres <a name="postgres"></a>
 
-### psql (postgres cllient) <a name="psql"></a>
+### psql (postgres client) <a name="psql"></a>
 
 this installs the client without the database
 
@@ -80,17 +90,11 @@ echo 'export PATH="/usr/local/opt/libpq/bin:$PATH"' >> ~/.zshrc
 
 From: [https://stackoverflow.com/a/49689589/1845671](https://stackoverflow.com/a/49689589/1845671)
 
-### psql commands <a name="psql_commands"></a>
+#### psql commands <a name="psql_commands"></a>
 
-#### connect <a name="psql_command_connect"></a>
-{% highlight shell %}
-psql -h localhost -p 5432 -U postgres
-{% endhighlight shell %}
-#### connect to database <a name="psql_command_connect_to_database"></a>
-{% highlight shell %}
-psql -h localhost -p 5432 -U postgres -d demo
-{% endhighlight shell %}
-#### run sql script <a name="psql_command_run_script"></a>
-{% highlight shell %}
-psql -h localhost -p 5432 -U postgres -f demo-small-en-20170815.sql
-{% endhighlight shell %}
+|Description                | Command |
+|--------------------|----------------------------------------------|
+|Connect|psql -h localhost -p 5432 -U postgres|
+|Connect to database|psql -h localhost -p 5432 -U postgres -d demo|
+|Run sql script|psql -h localhost -p 5432 -U postgres -f demo-small-en-20170815.sql|
+|Back up database|pg_dump -h localhost -p 5432 -U postgres -W -F p the_database > new_file.sql|
