@@ -1,11 +1,11 @@
 ---
 layout: post
-title:  "El code challenge"
+title:  "El code challenge (trabajo en proceso)"
 date:   2022-11-06 00:00:00 -0600
 categories: java
 tags: java
 comments: true
-published: false
+published: true
 ---
 
 Coleccion de consejos autobiograficos para comenzar a prepararte y sobrevivir el temido `code challenge`.
@@ -186,13 +186,18 @@ Aca te dejo recursos para que practiques.
 
 Tan importante como llegar a la solucion (si no es que mas) lo que quieren saber de ti es como piensas, asi que no te quedes en silencio y di lo que va pasando por tu mente mientras programas.
 
-Asegurate de que entiendes totalmente el problema, haz todas las preguntas que necesites, pregunta si los datos vienen ordenados, si el input es numerico puedes preguntar si hay datos negativos, si es una cadena de texto puedes preguntar si todo viene en minusculas o mayusculas etc. 
+Asegurate de que entiendes totalmente el problema, haz todas las preguntas que necesites, pregunta si los datos vienen ordenados, si el input es numerico puedes preguntar si hay datos negativos, si es una cadena de texto puedes preguntar si todo viene en minusculas o mayusculas etc.
 
 No desesperes tratando de encontrar la solucion optima (a menos que la hallas encontrado), puedes buscar la solucion `naive` por fuerza bruta y luego ir aproximandote a una mejor solucion.
 
 No tengas miedo de hacer preguntas mientras resuelves el problema, la persona que esta entrevistandote tiene tantas ganas como tu de que te vaya bien en la entrevista, asi que pregunta todo lo que necesites.
 
+Code Challenge de ejemplo: [https://github.com/jsedano/examples/blob/main/Solution.java][https://github.com/jsedano/examples/blob/main/Solution.java]
 
 
 https://www.bigocheatsheet.com
 https://www.bigocheatsheet.com/img/big-o-complexity-chart.png
+
+
+
+[https://github.com/jsedano/examples/blob/main/Solution.java]: https://github.com/jsedano/examples/blob/main/Solution.java
