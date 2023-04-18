@@ -5,7 +5,7 @@ date:   2022-11-06 00:00:00 -0600
 categories: java
 tags: java
 comments: true
-published: true
+published: false
 ---
 
 Coleccion de consejos autobiograficos para comenzar a prepararte y sobrevivir el temido `code challenge`.

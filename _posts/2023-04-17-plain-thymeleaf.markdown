@@ -7,7 +7,7 @@ tags: java thymeleaf
 comments: true
 ---
 
-`Thymeleaf` is a HTML ([and more][and more]) template engine for Java. This is the core in action with nothing else.
+`Thymeleaf` is an HTML ([and more][and more]) template engine for Java. This is the core in action with nothing else.
 
 You can find the complete code for this here: [only-thymeleaf][only-thymeleaf].
 
