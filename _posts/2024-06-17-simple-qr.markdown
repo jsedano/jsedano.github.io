@@ -1,0 +1,120 @@
+---
+layout: post
+title:  "Simple web QR maker with zxing and Thymeleaf"
+date:   2024-06-17 00:00:00 -0600
+categories: java thymeleaf qr
+tags: java thymeleaf qr
+comments: true
+---
+
+Encode text into QR Code with [zxing][zxing] and display it using thymeleaf. Live demo [here][simple-qr live].
+
+You can find the complete code for this [here][simple-qr code].
+
+This is the method to encode a String into an image, and then encode the image into a base 64 String that represents the png, based around the code in this [tutorial][java-qr-code-generator-zxing-example]. 
+
+[QRCreator.java][QRCreator.java]
+{% highlight java %}
+  private String unsafeCreateQRImage(String qrCodeText, int size)
+      throws WriterException, IOException {
+    // Create the ByteMatrix for the QR-Code that encodes the given String
+    Hashtable<EncodeHintType, ErrorCorrectionLevel> hintMap = new Hashtable<>();
+    hintMap.put(EncodeHintType.ERROR_CORRECTION, ErrorCorrectionLevel.L);
+    BitMatrix byteMatrix =
+        qrCodeWriter.encode(qrCodeText, BarcodeFormat.QR_CODE, size, size, hintMap);
+    // Make the BufferedImage that are to hold the QRCode
+    int matrixWidth = byteMatrix.getWidth();
+    BufferedImage image = new BufferedImage(matrixWidth, matrixWidth, BufferedImage.TYPE_INT_RGB);
+    image.createGraphics();
+
+    Graphics2D graphics = (Graphics2D) image.getGraphics();
+    graphics.setColor(Color.WHITE);
+    graphics.fillRect(0, 0, matrixWidth, matrixWidth);
+    // Paint and save the image using the ByteMatrix
+    graphics.setColor(Color.BLACK);
+
+    for (int i = 0; i < matrixWidth; i++) {
+      for (int j = 0; j < matrixWidth; j++) {
+        if (byteMatrix.get(i, j)) {
+          graphics.fillRect(i, j, 1, 1);
+        }
+      }
+    }
+    ByteArrayOutputStream bos = new ByteArrayOutputStream();
+    ImageIO.write(image, "png", bos);
+    byte[] imageBytes = bos.toByteArray();
+
+    Base64.Encoder encoder = Base64.getEncoder();
+    return encoder.encodeToString(imageBytes);
+  }
+{% endhighlight java %}
+
+
+Use this on the `controller` for the thymeleaf templates.
+
+[SimpleQRController.java][SimpleQRController.java]
+{% highlight  java %}
+  @RequestMapping("/")
+  public String newRandomSelect(Model model) {
+    model.addAttribute("textAndQRImage", new TextAndQRImage());
+    return "inputQR";
+  }
+
+  @RequestMapping("/show")
+  public String showQR(Model model, TextAndQRImage textAndQRImage, HttpSession session) {
+    if (Objects.isNull(textAndQRImage.getText()) || textAndQRImage.getText().isEmpty()) {
+      return "redirect:/simpleqr/";
+    }
+    String qrImage = qrCreator.createQRImage(textAndQRImage.getText(), 800);
+    if (Objects.isNull(qrImage) || qrImage.isEmpty()) {
+      return "redirect:/simpleqr/";
+    }
+    textAndQRImage.setText(textAndQRImage.getText());
+    textAndQRImage.setBase64Image(qrCreator.createQRImage(textAndQRImage.getText(), 800));
+
+    model.addAttribute("textAndQRImage", textAndQRImage);
+    return "showQR";
+  }
+{% endhighlight java %}
+
+Part of [inputQR.html][inputQR.html] that  asks for the text that will be encoded into a QR code.
+
+{% highlight html %}
+    <form action="/simpleqr/show" th:object="${textAndQRImage}" method="POST">
+
+        <input type="text" placeholder="input text here" th:field="*{text}">
+
+        <button type="submit">Generate QR</button>
+    </form>
+{% endhighlight html  %}
+
+And then we display the QR code in [showQR.html][showQR.html] template. 
+
+{% highlight html %}
+<body>
+
+    <div>
+        <img class="img-responsive" th:src="@{'data:image/png;base64,'+${textAndQRImage.base64Image}}"/>
+    </div>
+
+<h2 th:text=${textAndQRImage.text}></h2>
+</body>
+{% endhighlight html  %}
+
+
+
+
+
+
+Download the complete code for this here: [simple-qr code][simple-qr code].
+Live demo on: [simple-qr live][simple-qr live].
+
+
+[zxing]:https://github.com/zxing/zxing
+[simple-qr live]:https://demo.jsedano.dev/simpleqr/
+[simple-qr code]:https://github.com/jsedano/simple-qr
+[java-qr-code-generator-zxing-example]:https://www.digitalocean.com/community/tutorials/java-qr-code-generator-zxing-example
+[QRCreator.java]:https://github.com/jsedano/simple-qr/blob/main/src/main/java/dev/jsedano/simpleqr/service/QRCreator.java
+[SimpleQRController.java]:https://github.com/jsedano/simple-qr/blob/main/src/main/java/dev/jsedano/simpleqr/controller/SimpleQRController.java
+[inputQR.html]:https://github.com/jsedano/simple-qr/blob/main/src/main/resources/templates/inputQR.html
+[showQR.html]:https://github.com/jsedano/simple-qr/blob/main/src/main/resources/templates/showQR.html
