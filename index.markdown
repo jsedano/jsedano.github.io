@@ -4,4 +4,4 @@
 
 layout: home
 ---
-{%- include 062022.html -%}
+{%- include 072024.html -%}
