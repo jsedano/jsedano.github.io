@@ -25,5 +25,6 @@ Esta tabla reúne los recursos mencionados en la charla y sirve como referencia 
 | Azure for Students | Revisar Azure for Students para aprender servicios en la nube y créditos gratis. | <a href="https://azure.microsoft.com/es-es/free/students" target="_blank" rel="noopener">Azure for Students</a> |
 | Cisco NetAcad Python | Aprender Python para crear aplicaciones, automatizaciones y scripts. | <a href="https://www.netacad.com/es/catalogs/learn/programming?skill=python%2Cbasic-python-programming" target="_blank" rel="noopener">Cisco NetAcad Python</a> |
 | Unity Student | Acceder a Unity para explorar el desarrollo de videojuegos y experiencias interactivas. | <a href="https://unity.com/products/unity-student" target="_blank" rel="noopener">Unity Student</a> |
+| Pythonistas GDL | La comunidad de Python en Guadalajara. | <a href="https://pythonistas-gdl.org" target="_blank" rel="noopener">Pythonistas GDL</a> |
 
 > Usa esta tabla como referencia para comenzar hoy mismo con alguno de los recursos.
